@@ -24,7 +24,7 @@ hello friend from oclif! (./src/commands/hello/index.ts)
     // this.log(`hello ${args.person} from ${flags.from}! (./src/commands/hello/run.ts)`)
     await execa('docker', ['pull', 'heroku/builder:22'], {stdio: 'inherit'} )
     await execa('pack', ['build', args.app], {stdio: 'inherit'})
-
+    await execa('docker', ['run', args.app, '--expose', '5001'], {stdio: 'inherit'})
   }
 }
 
