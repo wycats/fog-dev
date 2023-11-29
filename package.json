@@ -6,7 +6,8 @@
   "dependencies": {
     "@oclif/core": "^3",
     "@oclif/plugin-help": "^6",
-    "@oclif/plugin-plugins": "^4"
+    "@oclif/plugin-plugins": "^4",
+    "execa": "^8.0.1"
   },
   "description": "oclif example Hello World CLI",
   "devDependencies": {
@@ -16,10 +17,10 @@
     "@types/mocha": "^9.0.0",
     "@types/node": "^18",
     "chai": "^4",
-    "eslint-config-oclif-typescript": "^3",
-    "eslint-config-oclif": "^5",
-    "eslint-config-prettier": "^9.0.0",
     "eslint": "^8.54.0",
+    "eslint-config-oclif": "^5",
+    "eslint-config-oclif-typescript": "^3",
+    "eslint-config-prettier": "^9.0.0",
     "mocha": "^10",
     "oclif": "^3.17.2",
     "shx": "^0.3.3",

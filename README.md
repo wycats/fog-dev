@@ -60,10 +60,10 @@ DESCRIPTION
 
 EXAMPLES
   $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
+  hello friend from oclif! (./src/commands/hello/run.ts)
 ```
 
-_See code: [src/commands/hello/index.ts](https://github.com/heroku/local-docker-hackday/blob/v0.0.0/src/commands/hello/index.ts)_
+_See code: [src/commands/hello/run.ts](https://github.com/heroku/local-docker-hackday/blob/v0.0.0/src/commands/hello/index.ts)_
 
 ## `local-v2 hello world`
 
