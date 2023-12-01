@@ -1,7 +1,6 @@
-#!/usr/bin/env node
+#!/usr/bin/env -S node --import esyes
 
-// eslint-disable-next-line unicorn/prefer-top-level-await
-(async () => {
-  const oclif = await import('@oclif/core')
-  await oclif.execute({development: false, dir: __dirname})
-})()
+// eslint-disable-next-line node/shebang
+import {execute} from '@oclif/core'
+
+await execute({dir: import.meta.url})

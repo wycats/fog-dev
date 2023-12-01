@@ -18,7 +18,7 @@ $ npm install -g local-docker-hackday
 $ local-v2 COMMAND
 running command...
 $ local-v2 (--version)
-local-docker-hackday/0.0.0 darwin-arm64 node-v18.16.1
+local-docker-hackday/0.0.0 linux-x64 node-v21.2.0
 $ local-v2 --help [COMMAND]
 USAGE
   $ local-v2 COMMAND
@@ -27,8 +27,7 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`local-v2 hello PERSON`](#local-v2-hello-person)
-* [`local-v2 hello world`](#local-v2-hello-world)
+* [`local-v2 get`](#local-v2-get)
 * [`local-v2 help [COMMANDS]`](#local-v2-help-commands)
 * [`local-v2 plugins`](#local-v2-plugins)
 * [`local-v2 plugins:install PLUGIN...`](#local-v2-pluginsinstall-plugin)
@@ -40,48 +39,25 @@ USAGE
 * [`local-v2 plugins:uninstall PLUGIN...`](#local-v2-pluginsuninstall-plugin-1)
 * [`local-v2 plugins:uninstall PLUGIN...`](#local-v2-pluginsuninstall-plugin-2)
 * [`local-v2 plugins update`](#local-v2-plugins-update)
+* [`local-v2 run APP`](#local-v2-run-app)
 
-## `local-v2 hello PERSON`
+## `local-v2 get`
 
-Say hello
+Get container info
 
 ```
 USAGE
-  $ local-v2 hello PERSON -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Who is saying hello
+  $ local-v2 get
 
 DESCRIPTION
-  Say hello
+  Get container info
 
 EXAMPLES
   $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/run.ts)
+  hello friend from oclif! (./src/commands/hello/index.ts)
 ```
 
-_See code: [src/commands/hello/run.ts](https://github.com/heroku/local-docker-hackday/blob/v0.0.0/src/commands/hello/index.ts)_
-
-## `local-v2 hello world`
-
-Say hello world
-
-```
-USAGE
-  $ local-v2 hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ local-v2 hello world
-  hello world! (./src/commands/hello/world.ts)
-```
-
-_See code: [src/commands/hello/world.ts](https://github.com/heroku/local-docker-hackday/blob/v0.0.0/src/commands/hello/world.ts)_
+_See code: [src/commands/get.ts](https://github.com/heroku/local-docker-hackday/blob/v0.0.0/src/commands/get.ts)_
 
 ## `local-v2 help [COMMANDS]`
 
@@ -132,7 +108,7 @@ Installs a plugin into the CLI.
 
 ```
 USAGE
-  $ local-v2 plugins:install PLUGIN...
+  $ local-v2 plugins add plugins:install PLUGIN...
 
 ARGUMENTS
   PLUGIN  Plugin to install.
@@ -174,7 +150,7 @@ Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ local-v2 plugins:inspect PLUGIN...
+  $ local-v2 plugins inspect PLUGIN...
 
 ARGUMENTS
   PLUGIN  [default: .] Plugin to inspect.
@@ -201,7 +177,7 @@ Installs a plugin into the CLI.
 
 ```
 USAGE
-  $ local-v2 plugins:install PLUGIN...
+  $ local-v2 plugins install PLUGIN...
 
 ARGUMENTS
   PLUGIN  Plugin to install.
@@ -245,15 +221,15 @@ Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ local-v2 plugins:link PLUGIN
+  $ local-v2 plugins link PLUGIN
 
 ARGUMENTS
   PATH  [default: .] path to plugin
 
 FLAGS
-  -h, --help      Show CLI help.
+  -h, --help          Show CLI help.
   -v, --verbose
-  --[no-]install  Install dependencies after linking the plugin.
+      --[no-]install  Install dependencies after linking the plugin.
 
 DESCRIPTION
   Links a plugin into the CLI for development.
@@ -275,7 +251,7 @@ Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ local-v2 plugins:uninstall PLUGIN...
+  $ local-v2 plugins remove plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -312,7 +288,7 @@ Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ local-v2 plugins:uninstall PLUGIN...
+  $ local-v2 plugins uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -340,7 +316,7 @@ Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ local-v2 plugins:uninstall PLUGIN...
+  $ local-v2 plugins unlink plugins:uninstall PLUGIN...
 
 ARGUMENTS
   PLUGIN  plugin to uninstall
@@ -377,4 +353,25 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.1.8/src/commands/plugins/update.ts)_
+
+## `local-v2 run APP`
+
+Say hello
+
+```
+USAGE
+  $ local-v2 run APP
+
+ARGUMENTS
+  APP  app to run
+
+DESCRIPTION
+  Say hello
+
+EXAMPLES
+  $ oex hello friend --from oclif
+  hello friend from oclif! (./src/commands/hello/index.ts)
+```
+
+_See code: [src/commands/run.ts](https://github.com/heroku/local-docker-hackday/blob/v0.0.0/src/commands/run.ts)_
 <!-- commandsstop -->

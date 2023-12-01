@@ -1,3 +1,7 @@
 {
-  "extends": ["oclif", "oclif-typescript", "prettier"]
+  "root": true,
+  "extends": ["oclif", "oclif-typescript", "plugin:@starbeam-dev/library:recommended"],
+  "rules": {
+    "simple-import-sort/imports": "off"
+  }
 }

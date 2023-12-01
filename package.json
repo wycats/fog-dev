@@ -1,32 +1,56 @@
 {
-  "author": "RyanDagg @ryandagg",
-  "bin": {
-    "local-v2": "./bin/run.js"
+  "name": "local-docker-hackday",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "oclif example Hello World CLI",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint . --ext .ts",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "yarn lint",
+    "prepack": "yarn build && oclif manifest && oclif readme",
+    "prepare": "yarn build",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
   },
   "dependencies": {
     "@oclif/core": "^3",
     "@oclif/plugin-help": "^6",
     "@oclif/plugin-plugins": "^4",
-    "execa": "^8.0.1"
+    "@typed-utils/json": "^1.0.1",
+    "execa": "^8.0.1",
+    "wait-on": "^7.2.0"
   },
-  "description": "oclif example Hello World CLI",
   "devDependencies": {
     "@oclif/prettier-config": "^0.2.1",
     "@oclif/test": "^3",
+    "@starbeam-dev/eslint-plugin": "^1.0.4",
     "@types/chai": "^4",
     "@types/mocha": "^9.0.0",
     "@types/node": "^18",
+    "@types/wait-on": "^5.3.4",
     "chai": "^4",
     "eslint": "^8.54.0",
     "eslint-config-oclif": "^5",
-    "eslint-config-oclif-typescript": "^3",
+    "eslint-config-oclif-typescript": "^3.0.21",
     "eslint-config-prettier": "^9.0.0",
+    "esyes": "^1.0.1",
     "mocha": "^10",
-    "oclif": "^3.17.2",
-    "shx": "^0.3.3",
+    "oclif": "^4.0.4",
+    "shx": "^0.3.4",
     "ts-node": "^10.9.1",
-    "typescript": "^5"
+    "typescript": "^5.3.2",
+    "yalc": "1.0.0-pre.53"
   },
+  "author": "RyanDagg @ryandagg",
+  "bin": {
+    "fog": "./bin/run.js",
+    "fog-dev": "./bin/dev.js"
+  },
+  "bugs": "https://github.com/heroku/local-docker-hackday/issues",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -36,13 +60,13 @@
     "/oclif.manifest.json"
   ],
   "homepage": "https://github.com/heroku/local-docker-hackday",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "name": "local-docker-hackday",
+  "keywords": [
+    "oclif"
+  ],
   "oclif": {
     "bin": "local-v2",
-    "dirname": "local-v2",
     "commands": "./dist/commands",
+    "dirname": "local-v2",
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins"
@@ -54,21 +78,5 @@
       }
     }
   },
-  "repository": "heroku/local-docker-hackday",
-  "scripts": {
-    "build": "shx rm -rf dist && tsc -b",
-    "lint": "eslint . --ext .ts",
-    "postpack": "shx rm -f oclif.manifest.json",
-    "posttest": "yarn lint",
-    "prepack": "yarn build && oclif manifest && oclif readme",
-    "prepare": "yarn build",
-    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif readme && git add README.md"
-  },
-  "version": "0.0.0",
-  "bugs": "https://github.com/heroku/local-docker-hackday/issues",
-  "keywords": [
-    "oclif"
-  ],
-  "types": "dist/index.d.ts"
+  "repository": "heroku/local-docker-hackday"
 }
