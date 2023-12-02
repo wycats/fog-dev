@@ -36,7 +36,7 @@
     "eslint": "^8.54.0",
     "eslint-config-oclif": "^5",
     "eslint-config-oclif-typescript": "^3.0.21",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "esyes": "^1.0.1",
     "mocha": "^10",
     "oclif": "^4.0.4",
