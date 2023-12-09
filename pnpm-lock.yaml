@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^5
     version: 5.0.0(eslint@8.54.0)
   eslint-config-oclif-typescript:
-    specifier: ^3.0.21
-    version: 3.0.21(eslint@8.54.0)(typescript@5.3.2)
+    specifier: ^3.0.24
+    version: 3.0.24(eslint@8.54.0)(typescript@5.3.2)
   eslint-config-prettier:
     specifier: ^9.0.0
     version: 9.0.0(eslint@8.54.0)
@@ -2623,8 +2623,8 @@ packages:
       eslint: 8.54.0
     dev: true
 
-  /eslint-config-oclif-typescript@3.0.21(eslint@8.54.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-LkZo5FbaqD6lbPiGfPINK4RqPQAf/zaqY3cM3h6Zjda5ntpC3ZkBfDQEArKERa3Yr4ucHiaDIUVNIZcUmNcjPA==}
+  /eslint-config-oclif-typescript@3.0.24(eslint@8.54.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-E4L7fe7gzYnRoyBzf3IvdNLK96kyzMorI/O1VH85gdePJSrPvpeF9E3aJvRO3ppfNpAW0h9Y6H6p949qV3o0IQ==}
     engines: {node: '>=18.0.0'}
     dependencies:
       '@typescript-eslint/eslint-plugin': 6.13.1(@typescript-eslint/parser@6.13.1)(eslint@8.54.0)(typescript@5.3.2)
